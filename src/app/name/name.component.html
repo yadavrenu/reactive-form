@@ -1,0 +1,53 @@
+<form [formGroup]="regForm">
+<label>
+ First Name:
+  <input type="text" formControlName="firstName">
+</label> 
+<!-- <small *ngIf="regForm.value.firstName.valid">Match</small> -->
+<br /><br />
+<label>
+  Last Name:
+   <input type="text" formControlName="lastName">
+</label><br /><br />
+
+<label>
+  Email :
+  <input type="email" formControlName="email">
+</label>
+<br /><br />
+<label>
+  Phone no:
+  <input type="number" formControlName="pNumber">
+</label><br /><br />
+
+<label>
+  Gender:
+  <input type="text" formControlName="gender">
+</label>
+<br /><br />
+<label>
+    Emp Id:
+    <input type="text" formControlName="empId" maxlength="4" minlength="4">
+  </label>
+<br /><br />
+<label>
+  Password:
+  <input type="password" formControlName="password">
+</label>
+<br /><br />
+<label>
+  Confirm Password:
+  <input type="password" formControlName="cPassword" (keyup)="checkPass()">
+ <div id="warning" *ngIf="pass!=cPass">
+ Password doesn't match.
+ </div>
+</label><br /><br />
+
+<button (click)="submit()"  >Submit</button>
+<!-- <div *ngIf="!regForm.valid && (regForm.dirty || regForm.touched)">
+  <br />Form is not valid
+</div> -->
+</form>
+
+
+
