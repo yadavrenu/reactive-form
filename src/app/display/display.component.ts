@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataContainerService } from '../data-container.service';
 
 @Component({
   selector: 'app-display',
@@ -7,14 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  
+  myItem;
+
   display(){
-    let myItem=JSON.parse(localStorage.getItem("formData"));
-    document.getElementById("display").innerHTML=myItem;
-   
+    this.myItem=this.dataService.getData();
+    // document.getElementById("display").innerHTML=this.myItem;
   }
 
-  constructor(private router: Router) { }
+  editForm(){
+    this.router.navigate(['/update']);
+  }
+
+  constructor(private router: Router,private dataService:DataContainerService) { }
 
   ngOnInit() {
     this.display();

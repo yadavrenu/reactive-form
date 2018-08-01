@@ -4,11 +4,13 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'
 
+import { DataContainerService } from './data-container.service'
+
 
 import { AppComponent } from './app.component';
 import { NameComponent } from './name/name.component';
 import { DisplayComponent } from './display/display.component';
-import { UpdateComponent } from './update/update.component';
+
 
 const appRoutes: Routes = [
   { path:'', component:NameComponent},
@@ -20,8 +22,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NameComponent,
-    DisplayComponent,
-    UpdateComponent
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
     CommonModule,
      RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataContainerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

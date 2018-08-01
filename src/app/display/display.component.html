@@ -1,4 +1,20 @@
 <h1> Working!</h1>
-<p id="display">
- 
-</p>
+<table cellspacing="20">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone number</th>
+        <th>Gender</th>
+        <th>Emp Id</th>
+    </tr>
+    <tr>
+        <td>{{myItem.firstName}}</td>
+        <td>{{myItem.lastName}}</td>
+        <td>{{myItem.email}}</td>
+        <td>{{myItem.pNumber}}</td>
+        <td>{{myItem.gender}}</td>
+        <td>{{myItem.empId}}</td>
+    </tr>
+</table>
+<button (click)="editForm()">Edit Form</button>

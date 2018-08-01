@@ -1,0 +1,22 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+
+
+#whole{
+    background-color: rgba(228, 218, 218, 0.534);
+    padding: 80px 130px;
+    margin: 0px 395px;
+    border-radius: 10px;
+    box-sizing: border-box
+}
+
+
+#eye{
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+    margin-left: 5px;
+    background-color: silver
+} 
