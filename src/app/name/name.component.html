@@ -48,7 +48,7 @@
           Email is required.
         </div>
         <div *ngIf="regForm.controls['email'].errors.email">
-          Not a valid email id format
+          Not a valid email id format.
         </div>
 
       </div>
@@ -64,6 +64,12 @@
 
         <div *ngIf="regForm.controls['pNumber'].errors.required">
           Phone no is required.
+        </div>
+        <div *ngIf="regForm.controls['pNumber'].errors.pattern">
+          Enter only numbers.
+        </div>
+        <div *ngIf="regForm.controls['pNumber'].errors.minlength">
+          Must be a 10 digit number.
         </div>
 
       </div>
@@ -97,6 +103,12 @@
         <div *ngIf="regForm.controls['empId'].errors.required">
           Employee id is required.
         </div>
+        <div *ngIf="regForm.controls['empId'].errors.minlength">
+          Must be a 4 digit Id
+        </div>
+        <div *ngIf="regForm.controls['empId'].errors.pattern">
+          Numbers only
+        </div>
 
       </div>
     </label>
@@ -105,9 +117,9 @@
     <label>Password:
       <br />
       <input [type]=showPassword formControlName="password">
-      <button type="button" class="btn btn-default" id="eye" (click)="showPass()">
+      <button type="button" class="btn btn-default" id="eye" (click)="showPass()"> 
         <span class="glyphicon glyphicon-eye"></span>
-      </button>
+      </button> 
       <br />
       <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)"
         class="alert alert-danger">
@@ -133,6 +145,6 @@
     <br />
 
     <!-- <button (click)="submit()" [disabled]="!regForm.valid">Submit</button> -->
-    <input id="submitButton" type="submit" value="Submit"/>
+    <input id="submitButton" type="submit" value="Submit" [disabled]="!regForm.valid"/>
   </form>
 </div>
