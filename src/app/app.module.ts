@@ -11,8 +11,9 @@ import { DisplayComponent } from './display/display.component';
 import { UpdateComponent } from './update/update.component';
 
 const appRoutes: Routes = [
+  { path:'', component:NameComponent},
   { path: 'display', component: DisplayComponent },
-  { path: 'update', component: UpdateComponent }
+  { path: 'update', component: NameComponent }
 ];
 
 @NgModule({
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule.forChild(appRoutes)
+     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

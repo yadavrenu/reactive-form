@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display',
@@ -13,7 +14,7 @@ export class DisplayComponent implements OnInit {
    
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.display();

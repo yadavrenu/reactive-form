@@ -43,9 +43,27 @@ export class NameComponent implements OnInit {
     this.router.navigate(['/display']);
   }
   
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    let data=JSON.parse(localStorage.getItem("formData"));
+    if(this.router.url==='/update')
+    {
+      this.regForm.patchValue(
+        {
+          firstName:data.firstName,
+          lastName:data.lastName,
+          email:data.email,
+          pNumber:data.pNumber,
+          gender:data.gender,
+          empId:data.empId
+        }
+      );
+
+
+    }
     
   }
 
