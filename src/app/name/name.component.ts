@@ -21,7 +21,7 @@ export class NameComponent implements OnInit {
       lastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
       email: new FormControl('', [Validators.email, Validators.required]),
       pNumber: new FormControl('', [Validators.pattern('[0-9]*'), Validators.required]),
-      gender: new FormControl('', Validators.required),
+      gender: new FormControl('', [Validators.required,Validators.pattern('male|female|Male|Female|other')]),
       empId: new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')]),
       cPassword: new FormControl('', Validators.required)

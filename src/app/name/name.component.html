@@ -6,7 +6,7 @@
       <input type="text" formControlName="firstName">
       <br />
       <div *ngIf="!regForm.controls['firstName'].valid && (regForm.controls['firstName'].dirty || regForm.controls['firstName'].touched)"
-        class="alert alert-danger">
+        class="alert alert-danger width" >
 
         <div *ngIf="regForm.controls['firstName'].errors.required">
           Name is required.
@@ -24,7 +24,7 @@
       <input type="text" formControlName="lastName">
       <br />
       <div *ngIf="!regForm.controls['lastName'].valid && (regForm.controls['lastName'].dirty || regForm.controls['lastName'].touched)"
-        class="alert alert-danger">
+        class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['lastName'].errors.required">
           Name is required.
@@ -42,7 +42,7 @@
       <br />
       <input type="email" formControlName="email">
       <br />
-      <div *ngIf="!regForm.controls['email'].valid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="!regForm.controls['email'].valid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)" class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['email'].errors.required">
           Email is required.
@@ -60,7 +60,7 @@
       <input type="text" formControlName="pNumber" maxlength="10" minlength="10">
       <br />
       <div *ngIf="!regForm.controls['pNumber'].valid && (regForm.controls['pNumber'].dirty || regForm.controls['pNumber'].touched)"
-        class="alert alert-danger">
+        class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['pNumber'].errors.required">
           Phone no is required.
@@ -79,12 +79,15 @@
     <label>
       Gender:
       <br />
-      <input type="text" formControlName="gender" required pattern="male|female|Other|male|female">
+      <input type="text" formControlName="gender" >
       <br />
       <div *ngIf="!regForm.controls['gender'].valid && (regForm.controls['gender'].dirty || regForm.controls['gender'].touched)"
-        class="alert alert-danger">
+        class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['gender'].errors.required">
+          Gender is required.
+        </div>
+        <div *ngIf="regForm.controls['gender'].errors.pattern">
           Can only be Male/Female/Other
         </div>
 
@@ -98,7 +101,7 @@
       <br />
       <input type="text" formControlName="empId" maxlength="4" minlength="4">
       <br />
-      <div *ngIf="!regForm.controls['empId'].valid && (regForm.controls['empId'].dirty || regForm.controls['empId'].touched)" class="alert alert-danger">
+      <div *ngIf="!regForm.controls['empId'].valid && (regForm.controls['empId'].dirty || regForm.controls['empId'].touched)" class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['empId'].errors.required">
           Employee id is required.
@@ -117,12 +120,11 @@
     <label>Password:
       <br />
       <input [type]=showPassword formControlName="password">
-      <button type="button" class="btn btn-default" id="eye" (click)="showPass()"> 
-        <span class="glyphicon glyphicon-eye"></span>
-      </button> 
+      <span (click)="showPass()" class="glyphicon glyphicon-eye-open"></span>
+    
       <br />
       <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)"
-        class="alert alert-danger">
+        class="alert alert-danger width">
 
         <div *ngIf="regForm.controls['password'].errors.required">
           Password is required.
@@ -137,14 +139,12 @@
     <label>
       Confirm Password:
       <br />
-      <input type="password" formControlName="cPassword" (keyup)="check()">
+      <input type="password" formControlName="cPassword" (keyup)="check()" >
       <br />
-      <div *ngIf="value">Password doesn't match</div>
+      <div *ngIf="value" class="alert alert-danger width">Password doesn't match</div>
     </label>
     <br />
     <br />
-
-    <!-- <button (click)="submit()" [disabled]="!regForm.valid">Submit</button> -->
     <input id="submitButton" type="submit" value="Submit" [disabled]="!regForm.valid"/>
   </form>
 </div>

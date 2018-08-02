@@ -1,5 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
 
 
@@ -12,19 +13,21 @@
 }
 
 #submitButton{
-    padding: 10px;
+    padding: 10px 30px;
     background-color: rgb(119, 177, 224);
-    margin-left: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
     border-radius: 6px;
-    border: 0px
+    border: 0px;
+    color: white;
+    font-size: 16px;
     
 }
 
-#eye{
-    padding-bottom: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 15px;
-    margin-left: 5px;
-    background-color: silver
-} 
+span{
+    margin-left: -20px;
+}
+
+.width{
+    max-width: 192px;
+}
